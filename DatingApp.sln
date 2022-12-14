@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32929.386
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatingApp.Server", "DatingApp\Server\DatingApp.Server.csproj", "{40B1B228-8D45-401E-8587-A5709D1DD560}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatingApp.Client", "DatingApp\Client\DatingApp.Client.csproj", "{9285061C-58BD-4D0E-9536-48B65C8D61F7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatingApp.Shared", "DatingApp\Shared\DatingApp.Shared.csproj", "{7BC103CE-40E6-4FA2-8FBD-B96ABC967D6E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{40B1B228-8D45-401E-8587-A5709D1DD560}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{40B1B228-8D45-401E-8587-A5709D1DD560}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{40B1B228-8D45-401E-8587-A5709D1DD560}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{40B1B228-8D45-401E-8587-A5709D1DD560}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9285061C-58BD-4D0E-9536-48B65C8D61F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9285061C-58BD-4D0E-9536-48B65C8D61F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9285061C-58BD-4D0E-9536-48B65C8D61F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9285061C-58BD-4D0E-9536-48B65C8D61F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7BC103CE-40E6-4FA2-8FBD-B96ABC967D6E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7BC103CE-40E6-4FA2-8FBD-B96ABC967D6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7BC103CE-40E6-4FA2-8FBD-B96ABC967D6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7BC103CE-40E6-4FA2-8FBD-B96ABC967D6E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0C23C234-D158-4EAC-8FCC-F51B6C0D7C21}
+	EndGlobalSection
+EndGlobal
