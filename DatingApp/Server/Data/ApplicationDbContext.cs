@@ -1,4 +1,5 @@
 ﻿using DatingApp.Server.Models;
+using DatingApp.Shared.Domain;
 using IdentityServer4.EntityFramework.Options;
 using Microsoft.AspNetCore.ApiAuthorization.IdentityServer;
 using Microsoft.EntityFrameworkCore;
@@ -17,5 +18,7 @@ namespace DatingApp.Server.Data
             IOptions<OperationalStoreOptions> operationalStoreOptions) : base(options, operationalStoreOptions)
         {
         }
+        public DbSet<Player> Players { get; set; }
+
     }
 }
