@@ -17,6 +17,7 @@ namespace DatingApp.Server.Repository
     {
         private readonly ApplicationDbContext _context;
         private IGenericRepository<Player> _players;
+        private IGenericRepository<Message> _messages;
         //private IGenericRepository<Model> _models;
         //private IGenericRepository<Colour> _colours;
         //private IGenericRepository<Booking> _bookings;
@@ -33,6 +34,8 @@ namespace DatingApp.Server.Repository
 
         public IGenericRepository<Player> Players
             => _players ??= new GenericRepository<Player>(_context);
+        public IGenericRepository<Message> Messages
+            => _messages ??= new GenericRepository<Message>(_context);
         //public IGenericRepository<Model> Models
         //    => _models ??= new GenericRepository<Model>(_context);
         //public IGenericRepository<Colour> Colours

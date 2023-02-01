@@ -30,7 +30,7 @@ namespace DatingApp.Shared.Domain
         [EmailAddress]
         public string EmailAddress { get; set; }
             
-        public char Gender { get; set; }
+        public string Gender { get; set; }
 
 
     }

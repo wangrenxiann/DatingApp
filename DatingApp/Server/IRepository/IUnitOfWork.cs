@@ -9,6 +9,7 @@ namespace DatingApp.Server.IRepository
     {
         Task Save(HttpContext httpContext);
         IGenericRepository<Player>Players { get; }
+        IGenericRepository<Message>Messages { get; }
         //IGenericRepository<Model> Models { get; }
         //IGenericRepository<Vehicle> Vehicles { get; }
         //IGenericRepository<Colour> Colours { get; }

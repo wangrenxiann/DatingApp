@@ -2,7 +2,7 @@
 
 namespace DatingApp.Server.Data.Migrations
 {
-    public partial class AddedDefaultUser : Migration
+    public partial class AddedDefaultDataAndUser : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
