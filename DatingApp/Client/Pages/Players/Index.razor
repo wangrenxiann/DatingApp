@@ -1,0 +1,81 @@
+﻿@page "/players/"
+@inject HttpClient _client
+@inject IJSRuntime js
+@attribute [Authorize]
+
+
+    <h3 class=" card-title">Date Players</h3>
+    <br />
+    <a href="/players/create" class="btn btn-secondary">
+        <span class="oi oi-plus"></span>
+        Create New Player
+    </a>
+    <br />
+    <br />
+@if (Players ==null)
+            {
+                <div class=" alert alert-info">Loading Players...</div>
+}
+else
+            {
+                <table class=" table table-responsive">
+                    <thead>
+                        <tr>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Address</th>
+                            <th>Contact Number</th>
+                            <th>Email Address</th>
+                            <th>Gender</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var player in Players)
+                {
+                        <tr>
+                            <td>@player.FirstName</td>
+                            <td>@player.LastName</td>
+                            <td>@player.Address</td>
+                            <td>@player.ContactNumber</td>
+                            <td>@player.EmailAddress</td>
+                            <td>@player.Gender</td>
+
+                            <td>
+                                <a href=" /players/view/@player.Id" class=" btn btn-primary">
+                                    <span class=" oi oi-book"></span>
+                                </a>
+                                <a href=" /players/edit/@player.Id" class=" btn btn-warning">
+                                    <span class=" oi oi-pencil"></span>
+                                </a>
+                                <button class=" btn btn-danger" @onclick="@(()=>Delete(player.Id))">
+                                    <span class=" oi oi-delete"></span>
+                                </button>
+                            </td>
+                            </tr>
+
+                }
+                    </tbody>
+                </table>
+            }
+
+    @code {
+        private List<Player> Players;
+
+        protected async override Task OnInitializedAsync()
+        {
+            Players = await _client.GetFromJsonAsync<List<Player>>($"{Endpoints.PlayersEndpoint}");
+        }
+
+        async Task Delete(int playerId)
+        {
+            var player = Players.First(q => q.Id == playerId);
+            var confirm = await js.InvokeAsync<bool>("confirm", $"Do you want to delete {player.FirstName}?");
+            if (confirm)
+            {
+                await _client.DeleteAsync($"{Endpoints.PlayersEndpoint}/{playerId}");
+                await OnInitializedAsync();
+            }
+
+        }
+    }

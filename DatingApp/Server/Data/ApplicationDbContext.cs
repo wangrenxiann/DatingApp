@@ -1,4 +1,5 @@
-﻿using DatingApp.Server.Models;
+﻿using DatingApp.Server.Configurations.Entities;
+using DatingApp.Server.Models;
 using DatingApp.Shared.Domain;
 using IdentityServer4.EntityFramework.Options;
 using Microsoft.AspNetCore.ApiAuthorization.IdentityServer;
@@ -21,6 +22,12 @@ namespace DatingApp.Server.Data
         public DbSet<Player> Players { get; set; }
         public DbSet<Message> Messages { get; set; }
 
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            base.OnModelCreating(builder);
+            builder.ApplyConfiguration(new PlayerSeedConfiguration());
+            builder.ApplyConfiguration(new MessageSeedConfiguration());
 
+        }
     }
 }

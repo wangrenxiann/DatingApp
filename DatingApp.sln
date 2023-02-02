@@ -1,13 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.1972
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32929.386
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatingApp.Server", "DatingApp\Server\DatingApp.Server.csproj", "{40B1B228-8D45-401E-8587-A5709D1DD560}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DatingApp.Server", "DatingApp\Server\DatingApp.Server.csproj", "{40B1B228-8D45-401E-8587-A5709D1DD560}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatingApp.Client", "DatingApp\Client\DatingApp.Client.csproj", "{9285061C-58BD-4D0E-9536-48B65C8D61F7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DatingApp.Client", "DatingApp\Client\DatingApp.Client.csproj", "{9285061C-58BD-4D0E-9536-48B65C8D61F7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatingApp.Shared", "DatingApp\Shared\DatingApp.Shared.csproj", "{7BC103CE-40E6-4FA2-8FBD-B96ABC967D6E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DatingApp.Shared", "DatingApp\Shared\DatingApp.Shared.csproj", "{7BC103CE-40E6-4FA2-8FBD-B96ABC967D6E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

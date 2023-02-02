@@ -115,6 +115,26 @@ namespace DatingApp.Server.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Messages");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CreatedBy = "System",
+                            DateCreated = new DateTime(2023, 2, 2, 19, 58, 48, 94, DateTimeKind.Local).AddTicks(6691),
+                            DateUpdated = new DateTime(2023, 2, 2, 19, 58, 48, 94, DateTimeKind.Local).AddTicks(6708),
+                            MessageDesc = "Matter Baby",
+                            UpdatedBy = "System"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            CreatedBy = "System",
+                            DateCreated = new DateTime(2023, 2, 2, 19, 58, 48, 94, DateTimeKind.Local).AddTicks(6716),
+                            DateUpdated = new DateTime(2023, 2, 2, 19, 58, 48, 94, DateTimeKind.Local).AddTicks(6718),
+                            MessageDesc = "Whats Up",
+                            UpdatedBy = "System"
+                        });
                 });
 
             modelBuilder.Entity("DatingApp.Shared.Domain.Player", b =>
@@ -163,6 +183,36 @@ namespace DatingApp.Server.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Players");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Address = "520875 tampines st09 #100-0",
+                            ContactNumber = "98765432",
+                            CreatedBy = "System",
+                            DateCreated = new DateTime(2023, 2, 2, 19, 58, 48, 90, DateTimeKind.Local).AddTicks(2308),
+                            DateUpdated = new DateTime(2023, 2, 2, 19, 58, 48, 92, DateTimeKind.Local).AddTicks(1603),
+                            EmailAddress = "Wongkkb@gmail.com",
+                            FirstName = "Wong",
+                            Gender = "M",
+                            LastName = "Kukubird",
+                            UpdatedBy = "System"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Address = "567892 tampines st20 #50-0",
+                            ContactNumber = "91234567",
+                            CreatedBy = "System",
+                            DateCreated = new DateTime(2023, 2, 2, 19, 58, 48, 92, DateTimeKind.Local).AddTicks(3545),
+                            DateUpdated = new DateTime(2023, 2, 2, 19, 58, 48, 92, DateTimeKind.Local).AddTicks(3555),
+                            EmailAddress = "Suuuuuuuuuuuuuuuuu@gmail.com",
+                            FirstName = "Su",
+                            Gender = "F",
+                            LastName = "Susan",
+                            UpdatedBy = "System"
+                        });
                 });
 
             modelBuilder.Entity("IdentityServer4.EntityFramework.Entities.DeviceFlowCodes", b =>
