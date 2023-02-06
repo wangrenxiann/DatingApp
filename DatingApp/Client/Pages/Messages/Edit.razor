@@ -1,0 +1,24 @@
+﻿@page  "/messages/edit/{id:int}"
+@inject HttpClient _client
+@inject NavigationManager _navManager
+
+<h3>Edit Message</h3>
+
+<FormComponent ButtonText="Update" OnValidSubmit="EditMessage" message="message" />
+
+@code {
+    [Parameter] public int id { get; set; }//This is to set the parameter required at the @page directive /models/edit/{id:int}.
+    Message message = new Message();//This is the model object used by the form component. The form component will be added later.
+
+    protected async override Task OnParametersSetAsync()
+    {
+        message = await _client.GetFromJsonAsync<Message>($"{Endpoints.MessagesEndpoint}/{id}");
+    }
+
+    async Task EditMessage()
+    {
+        await _client.PutAsJsonAsync($"{Endpoints.MessagesEndpoint}/{id}", message);
+        _navManager.NavigateTo("/messages/");
+    }
+}
+

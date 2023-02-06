@@ -1,0 +1,24 @@
+﻿@page  "/players/edit/{id:int}"
+@inject HttpClient _client
+@inject NavigationManager _navManager
+
+<h3>Edit Player</h3>
+
+<FormComponent ButtonText="Update" OnValidSubmit="EditPlayer" player="player" />
+
+@code {
+    [Parameter] public int id { get; set; }//This is to set the parameter required at the @page directive /models/edit/{id:int}.
+    Player player = new Player();//This is the model object used by the form component. The form component will be added later.
+
+    protected async override Task OnParametersSetAsync()
+    {
+        player = await _client.GetFromJsonAsync<Player>($"{Endpoints.PlayersEndpoint}/{id}");
+    }
+
+    async Task EditPlayer()
+    {
+        await _client.PutAsJsonAsync($"{Endpoints.PlayersEndpoint}/{id}", player);
+        _navManager.NavigateTo("/players/");
+    }
+}
+

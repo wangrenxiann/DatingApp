@@ -1,0 +1,14 @@
+﻿@page "/players/view/{id:int}"
+@inject HttpClient _client
+@inject NavigationManager _navManager
+<h3>View Players</h3>
+<FormComponent player="player" Disabled="true" />
+@code {
+    [Parameter] public int id { get; set; }
+    Player player = new Player();
+    protected async override Task OnParametersSetAsync()
+    {
+        player = await
+        _client.GetFromJsonAsync<Player>($"{Endpoints.PlayersEndpoint}/{id}");
+    }
+}

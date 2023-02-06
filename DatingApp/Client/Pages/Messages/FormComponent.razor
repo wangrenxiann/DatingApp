@@ -1,0 +1,28 @@
+﻿@using DatingApp.Client.Components
+
+<EditForm Model="@message" OnValidSubmit="@OnValidSubmit">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+    <fieldset disabled="@Disabled">
+        <div class=" form-group">
+            <label>Message Details: </label>
+            <div>
+                <InputText @bind-Value=" message.MessageDesc" class="form-control" />
+                <ValidationMessage For="@(() => message.MessageDesc)" />
+            </div>
+        </div>
+        
+    </fieldset>
+    @if (!Disabled)
+    {
+        <button type="submit" class=" btn btn-success btn-block">@ButtonText</button>
+    }
+    <BackToList Target="messages" />
+
+</EditForm>
+@code {
+    [Parameter] public bool Disabled { get; set; } = false;
+    [Parameter] public Message message { get; set; }
+    [Parameter] public string ButtonText { get; set; } = "Save";
+    [Parameter] public EventCallback OnValidSubmit { get; set; }
+}
